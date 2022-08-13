@@ -96,8 +96,7 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="header__top__left">
                             <ul>
-                                <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
-                                <li>Free Shipping for all Order of $99</li>
+                                <li><i class="fa fa-envelope"></i> h.andrianjafison@gmail.com</li>
                             </ul>
                         </div>
                     </div>
@@ -111,15 +110,14 @@
                             </div>
                             <div class="header__top__right__language">
                                 <img src="<?php echo base_url(); ?>assetFrontOffice/img/language.png" alt="">
-                                <div>English</div>
+                                <div>Français</div>
                                 <span class="arrow_carrot-down"></span>
                                 <ul>
-                                    <li><a href="#">Spanis</a></li>
-                                    <li><a href="#">English</a></li>
+                                    <li><a href="#">Français</a></li>
                                 </ul>
                             </div>
                             <div class="header__top__right__auth">
-                                <a href="#"><i class="fa fa-user"></i> Login</a>
+                                <a href="#"><i class="fa fa-user"></i> Connexion</a>
                             </div>
                         </div>
                     </div>
@@ -136,8 +134,8 @@
                 <div class="col-lg-6">
                     <nav class="header__menu">
                         <ul>
-                            <li class="active"><a href="./index.html">Home</a></li>
-                            <li><a href="./shop-grid.html">Shop</a></li>
+                            <li class="active"><a href="./index.html">Acceuil</a></li>
+                            <li><a href="./shop-grid.html">Boutique</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="header__menu__dropdown">
                                     <li><a href="./shop-details.html">Shop Details</a></li>
@@ -179,17 +177,14 @@
                             <span>liste des Catégories</span>
                         </div>
                         <ul>
-                            <li><a href="#">Fresh Meat</a></li>
-                            <li><a href="#">Vegetables</a></li>
-                            <li><a href="#">Fruit & Nut Gifts</a></li>
-                            <li><a href="#">Fresh Berries</a></li>
-                            <li><a href="#">Ocean Foods</a></li>
-                            <li><a href="#">Butter & Eggs</a></li>
-                            <li><a href="#">Fastfood</a></li>
-                            <li><a href="#">Fresh Onion</a></li>
-                            <li><a href="#">Papayaya & Crisps</a></li>
-                            <li><a href="#">Oatmeal</a></li>
-                            <li><a href="#">Fresh Bananas</a></li>
+                            <?php 
+                            foreach ($allCategorie->result() as $row)
+                                {
+                                        echo '
+                                            <li> <a href="'.base_url().'frontOffice/index/'.$row->id.'">'.$row->categorie.'</a> </li>
+                                        ';
+                                } 
+                            ?>
                         </ul>
                     </div>
                 </div>
@@ -198,11 +193,11 @@
                         <div class="hero__search__form">
                             <form action="#">
                                 <div class="hero__search__categories">
-                                    liste des Catégories
+                                    Catégories
                                     <span class="arrow_carrot-down"></span>
                                 </div>
                                 <input type="text" placeholder="What do yo u need?">
-                                <button type="submit" class="site-btn">SEARCH</button>
+                                <button type="submit" class="site-btn">Rechercher</button>
                             </form>
                         </div>
                         <div class="hero__search__phone">
@@ -210,17 +205,17 @@
                                 <i class="fa fa-phone"></i>
                             </div>
                             <div class="hero__search__phone__text">
-                                <h5>+65 11.188.888</h5>
-                                <span>support 24/7 time</span>
+                                <h5>+261 32 93 717 64</h5>
+                                <span>Assistance 24h/24 et 7j/7</span>
                             </div>
                         </div>
                     </div>
                     <div class="hero__item set-bg" data-setbg="<?php echo base_url(); ?>assetFrontOffice/img/hero/banner.jpg">
                         <div class="hero__text">
-                            <span>FRUIT FRESH</span>
-                            <h2>Vegetable <br />100% Organic</h2>
-                            <p>Free Pickup and Delivery Available</p>
-                            <a href="#" class="primary-btn">SHOP NOW</a>
+                            <span>FRUITS ET MEGUMES FRAIS</span>
+                            <h2>Végétal <br/>100% Bio</h2>
+                            <p>Ramassage et livraison gratuits disponibles</p>
+                            <a href="#" class="primary-btn">ACHETEZ MAINTENANT</a>
                         </div>
                     </div>
                 </div>
@@ -230,33 +225,13 @@
     <!-- Hero Section End -->
 
     <!-- Categories Section Begin -->
-    <section class="categories">
+    <section class="categories" style="display: none;">
         <div class="container">
             <div class="row">
                 <div class="categories__slider owl-carousel">
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="<?php echo base_url(); ?>assetFrontOffice/img/categories/cat-1.jpg">
-                            <h5><a href="#">Fresh Fruit</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="<?php echo base_url(); ?>assetFrontOffice/img/categories/cat-2.jpg">
-                            <h5><a href="#">Dried Fruit</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="<?php echo base_url(); ?>assetFrontOffice/img/categories/cat-3.jpg">
-                            <h5><a href="#">Vegetables</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
                         <div class="categories__item set-bg" data-setbg="<?php echo base_url(); ?>assetFrontOffice/img/categories/cat-4.jpg">
-                            <h5><a href="#">drink fruits</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="<?php echo base_url(); ?>assetFrontOffice/img/categories/cat-5.jpg">
-                            <h5><a href="#">drink fruits</a></h5>
+                            <h5><a href="#">testt</a></h5>
                         </div>
                     </div>
                 </div>
@@ -271,14 +246,14 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <h2>Featured Product</h2>
+                        <h2>Produit en vedette</h2>
                     </div>
                     <div class="featured__controls">
                         <ul>
-                            <li class="active" data-filter="*">All</li>
-                            <li data-filter=".oranges">Oranges</li>
-                            <li data-filter=".fresh-meat">Fresh Meat</li>
-                            <li data-filter=".vegetables">Vegetables</li>
+                            <li class="active" data-filter="*">Tout</li>
+                            <li data-filter=".oranges">Fruits</li>
+                            <li data-filter=".fresh-meat">Viande</li>
+                            <li data-filter=".vegetables">Legume</li>
                             <li data-filter=".fastfood">Fastfood</li>
                         </ul>
                     </div>
@@ -392,7 +367,7 @@
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 mix fastfood vegetables">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-8.jpg">
+                        <div class="featured__item__pic set-bg" data-setbg="<?php echo base_url(); ?>assetFrontOffice/img/featured/feature-8.jpg">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
@@ -433,7 +408,7 @@
     <section class="latest-product spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-6 col-md-6">
                     <div class="latest-product__text">
                         <h4>Latest Products</h4>
                         <div class="latest-product__slider owl-carousel">
@@ -462,7 +437,7 @@
                                     </div>
                                     <div class="latest-product__item__text">
                                         <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
+                                        <span>$0.00</span>
                                     </div>
                                 </a>
                             </div>
@@ -491,14 +466,14 @@
                                     </div>
                                     <div class="latest-product__item__text">
                                         <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
+                                        <span>$4520.00</span>
                                     </div>
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-6 col-md-6">
                     <div class="latest-product__text">
                         <h4>Top Rated Products</h4>
                         <div class="latest-product__slider owl-carousel">
@@ -523,11 +498,11 @@
                                 </a>
                                 <a href="#" class="latest-product__item">
                                     <div class="latest-product__item__pic">
-                                        <img src="<?php echo base_url(); ?>assetFrontOffices/img/latest-product/lp-3.jpg" alt="">
+                                       <img src="<?php echo base_url(); ?>assetFrontOffice/img/latest-product/lp-3.jpg" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
                                         <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
+                                        <span>$66655550.00</span>
                                     </div>
                                 </a>
                             </div>
@@ -556,17 +531,17 @@
                                     </div>
                                     <div class="latest-product__item__text">
                                         <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
+                                        <span>$10000.00</span>
                                     </div>
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="latest-product__text">
+                <div class="col-lg-6 col-md-6" style="display: none;">
+                    <div class="latest-product__text" >
                         <h4>Review Products</h4>
-                        <div class="latest-product__slider owl-carousel">
+                        <div class="latest-product__slider owl-carousel" >
                             <div class="latest-prdouct__slider__item">
                                 <a href="#" class="latest-product__item">
                                     <div class="latest-product__item__pic">
