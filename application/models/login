@@ -1,0 +1,155 @@
+<?php
+class FrontOffice_model extends CI_Model{
+    function __construct()
+    {
+        // Call the Model constructor
+        parent::__construct();
+    }
+
+    public function demandeRecharge($data){
+        $this->db->insert('demandeRecharge', $data);
+    }
+
+    function findAllCategorie()  
+      {  
+
+        $this->db->select('*');
+        $this->db->from('categorie');
+        return $query = $this->db->get();   
+           
+      }
+
+      function voirSolde($idUser)  
+      {  
+
+        $this->db->select('*');
+        $this->db->from('portefeuille');
+        $this->db->where('idUser', $idUser);
+        return $query = $this->db->get();   
+           
+      }
+
+      function debiterCompte($montant,$idUser)  
+      {  
+           $this->db->set('argent', $montant);
+           $this->db->where('idUser', $idUser);
+           $this->db->update('portefeuille');
+      }
+
+
+      function ajoutPanier($idProduit ,$qte ,$idUser, $prixTotal,$idPayment)  
+      {  
+        $this -> db -> set ( 'idProduit' ,  $idProduit );
+        $this -> db -> set ( 'qte' ,  $qte );
+        $this -> db -> set ( 'idUser' ,  $idUser );
+        $this -> db -> set ( 'prixTotal' ,  $prixTotal );
+        $this -> db -> set ( 'idPayment' ,  $idPayment ); 
+        $this -> db -> insert ( 'panier' );
+           
+      }
+
+      function getIdPayment()  
+      {  
+        $this->db->select_max('id');
+        return $query = $this->db->get('payment');  
+           
+      }
+
+      function payment($data)
+      {
+        $this->db->insert('payment', $data);
+
+      }
+
+      function getPayment($idPayment)
+      {
+        $this->db->select('*');
+        $this->db->from('payment');
+        $this->db->where('id', $idPayment);
+        return $query = $this->db->get();  
+
+      }
+
+    function findProduitByCategorie($categorie)  
+      {  
+
+        $this->db->select('*');
+        $this->db->from('protuit');
+        $this->db->where('idCategorie', $categorie);
+        return $query = $this->db->get();   
+           
+      }
+    function recherche($motCle)  
+      {  
+
+        $this->db->select('*');
+        $this->db->from('protuit');
+        $this->db-> like ('nom' ,$motCle); 
+        return $query = $this->db->get();   
+           
+      }
+    function rechercheById($id)  
+      {  
+
+        $this->db->select('*');
+        $this->db->from('protuit');
+        $this->db-> where ('id' ,$id); 
+        return $query = $this->db->get();   
+           
+      }
+
+      function rechercheAvancer($motCle,$prixMax,$categorie,$prixMin)  
+      {  
+        if($prixMax>0 AND $categorie>0 AND $prixMin>0 )
+        {
+            $this->db->select('*');
+            $this->db->from('protuit');
+            $this->db-> where ('prix <' ,$prixMax);
+            $this->db-> where ('prix >' ,$prixMin);
+            $this->db-> where ('categorie' ,$categorie);
+            $this->db-> like ('nom' ,$motCle);
+            return $query = $this->db->get();   
+        }
+        if($prixMax>0)
+        {
+            $this->db->select('*');
+            $this->db->from('protuit');
+            $this->db-> where ('prix <' ,$prixMax);
+            $this->db-> like ('nom' ,$motCle);
+            return $query = $this->db->get();   
+        }
+        if($prixMax>0)
+        {
+            $this->db->select('*');
+            $this->db->from('protuit');
+            $this->db-> where ('prix <' ,$prixMax);
+            $this->db-> like ('nom' ,$motCle);
+            return $query = $this->db->get();   
+        }
+
+         if( $categorie>0 AND $prixMin>0 )
+        {
+            $this->db->select('*');
+            $this->db->from('protuit');
+            $this->db-> where ('prix >' ,$prixMin);
+            $this->db-> like ('nom' ,$motCle);
+            return $query = $this->db->get(); 
+        }
+         if($prixMin>0 )
+        {
+            $this->db->select('*');
+            $this->db->from('protuit');
+            $this->db-> where ('categorie' ,$categorie);
+            $this->db-> like ('nom' ,$motCle);
+            return $query = $this->db->get(); 
+        }
+        if($motCle !="")
+        {
+            $this->db->select('*');
+            $this->db->from('protuit');
+            $this->db-> where ('nom' ,$motCle);
+            return $query = $this->db->get();   
+        }
+      }
+}
+?>
