@@ -385,62 +385,25 @@
                         <h4>Produits les mieux notés</h4>
                         <div class="latest-product__slider owl-carousel">
                             <div class="latest-prdouct__slider__item">
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="<?php echo base_url(); ?>assetFrontOffice/img/latest-product/lp-1.jpg" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="<?php echo base_url(); ?>assetFrontOffice/img/latest-product/lp-2.jpg" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                       <img src="<?php echo base_url(); ?>assetFrontOffice/img/latest-product/lp-3.jpg" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$666.00</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="latest-prdouct__slider__item">
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="<?php echo base_url(); ?>assetFrontOffice/img/latest-product/lp-1.jpg" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="<?php echo base_url(); ?>assetFrontOffice/img/latest-product/lp-2.jpg" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="<?php echo base_url(); ?>assetFrontOffice/img/latest-product/lp-3.jpg" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$10000.00</span>
-                                    </div>
-                                </a>
+                                <?php
+                                    for($i=0 ; $i<3 ; $i++)
+                                    {
+                                            echo
+                                            '
+                                                    <a href="#" class="latest-product__item">
+                                                        <div class="latest-product__item__pic">
+                                                            <img src="'.base_url().'uploads/images/'.$produitMieuxNote->result()[$i]->image.'" alt="">
+                                                        </div>
+                                                        <div class="latest-product__item__text">
+                                                            <h6>'.$produitMieuxNote->result()[$i]->nom.'</h6>
+                                                            <span>'.$produitMieuxNote->result()[$i]->prix.' Ariary</span>
+                                                            <span>'.$produitMieuxNote->result()[$i]->note.' Notes</span>
+                                                        </div>
+                                                    </a>    
+                                            ';
+                                    }
+
+                                ?>
                             </div>
                         </div>
                     </div>
@@ -453,24 +416,6 @@
                                 <a href="#" class="latest-product__item">
                                     <div class="latest-product__item__pic">
                                         <img src="<?php echo base_url(); ?>assetFrontOffice/img/latest-product/lp-1.jpg" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="<?php echo base_url(); ?>assetFrontOffice/img/latest-product/lp-2.jpg" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="<?php echo base_url(); ?>assetFrontOffice/img/latest-product/lp-3.jpg" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
                                         <h6>Crab Pool Security</h6>
