@@ -162,7 +162,23 @@ public function debiterCompte($mantant , $idUser){
         return $query = $this->db->get();   
     }
 
-   
+    function findNewProduit()
+    {      
+         //$this->db->select('*');
+         return $query = $this->db->get('protuit' ,8, 0);
+    }
 
+    function getProduitPlusVendu()
+    {
+        $this->db->select('*');
+        $this->db->order_by('vente', 'DESC');
+        return $query = $this->db->get('protuit' ,6, 0);
+    }
+    function getProduitMieuxNote()
+    {
+        $this->db->select('*');
+        $this->db->order_by('note', 'DESC');
+        return $query = $this->db->get('protuit' ,6, 0);
+    }
 }
 ?>

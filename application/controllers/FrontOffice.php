@@ -37,11 +37,19 @@ class FrontOffice extends CI_Controller {
 			$response=$this->FrontOffice_model->findAllCategorie();
 			$response2=$this->FrontOffice_model->findProduitByCategorie($idProduit);
 			$response3=$this->FrontOffice_model->getRecette();
+			$response4 =$this->FrontOffice_model->findNewProduit();
+			$response5 =$this->FrontOffice_model->getProduitPlusVendu();
+			$response6 =$this->FrontOffice_model->getProduitMieuxNote();
 
+			//echo ($response5->result()[0]->image);
+			//die();
 			$this->load->view('front/index',array(
 			'allCategorie' =>$response,
 			'produitByCategorie' =>$response2,
 			'AllRecette' =>$response3,
+			'newProduit' =>$response4,
+			'TopProduit' =>$response5,
+			'produitMieuxNote' =>$response6,
 		)); 
 	}
 
