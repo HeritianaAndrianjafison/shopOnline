@@ -405,6 +405,27 @@
 
                                 ?>
                             </div>
+                            <div class="latest-prdouct__slider__item">
+                            <?php
+                                    for($i=2 ; $i<count($produitMieuxNote->result()) ; $i++)
+                                    {
+                                            echo
+                                            '
+                                                    <a href="#" class="latest-product__item">
+                                                        <div class="latest-product__item__pic">
+                                                            <img src="'.base_url().'uploads/images/'.$produitMieuxNote->result()[$i]->image.'" alt="">
+                                                        </div>
+                                                        <div class="latest-product__item__text">
+                                                            <h6>'.$produitMieuxNote->result()[$i]->nom.'</h6>
+                                                            <span>'.$produitMieuxNote->result()[$i]->prix.' Ariary</span>
+                                                            <span>'.$produitMieuxNote->result()[$i]->note.' Notes</span>
+                                                        </div>
+                                                    </a>    
+                                            ';
+                                    }
+
+                                ?>
+                            </div>
                         </div>
                     </div>
                 </div>
