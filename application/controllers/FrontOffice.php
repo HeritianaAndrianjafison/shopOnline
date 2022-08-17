@@ -89,10 +89,12 @@ class FrontOffice extends CI_Controller {
 	public function fiche($id=0)
 	{
 		$resultat=$this->FrontOffice_model->rechercheById($id);
-			$this->load->view('frontOffice/detail',array(
+			$this->load->view('front/fiche',array(
 			'resultat' =>$resultat,
 			'idProduit'=>$id,
-		));  
+		));
+
+
 	}
 
 	public function creationPanier(){
